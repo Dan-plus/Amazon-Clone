@@ -1,0 +1,17 @@
+:root{
+      @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+      --primary-color: #febd69;
+      --primary-shade: #d49644;
+}
+*{
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+      box-sizing: border-box;
+}
+/* .rating {
+      display: flex;
+      align-items: center;
+      padding: 10px 0px;
+} */

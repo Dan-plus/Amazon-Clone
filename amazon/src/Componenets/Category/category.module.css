@@ -22,7 +22,7 @@
 .category p{
       font-size: 12px;
       font-weight: bold;
-      columns: rgb(9, 132, 209);
+      color: rgb(9, 132, 209);
 }
 .category_container{
       position: relative;
