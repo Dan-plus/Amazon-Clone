@@ -7,17 +7,24 @@ import { Link } from "react-router-dom";
 
 
 
-const Productcard = ({product}) => {
-      const {image, title, id, rating, price,} = product;
+const Productcard = ({product,flex,renderDesc}) => {
+      const { image, title, id, rating, price, description } = product;
       // console.log(product);
       
       return (
-        <div className={`${classes.card_container}`}>
+        <div
+          className={`${classes.card_container} ${
+            flex ? classes.product_flexed : ""
+          }`}
+        >
           <Link to={`/products/${id}`}>
             <img src={image} alt="" className={classes.img_container} />
           </Link>
           <div>
             <h3>{title}</h3>
+            {renderDesc && (
+              <div style={{ maxWidth: "750px" }}>{description}</div>
+            )}
             <div className={classes.rating}>
               {/* Rating */}
               <Rating value={rating?.rate} precision={0.1} />
