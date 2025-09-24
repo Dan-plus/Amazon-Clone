@@ -31,7 +31,7 @@ function Results() {
         <h1 style={{ padding: "30px" }}>Results</h1>
         <p style={{ padding: "30px" }}> Category/{categoryName} </p>
         <hr />
-         {isLoading? (<Loader />):(<div className={classes.products_container}>
+        <div className={classes.products_container}>
           {results?.map((product) => (
             <Productcard
               key={product.id}
@@ -41,7 +41,6 @@ function Results() {
             />
           ))}
         </div>
-         )}
       </section>
     </LayOut>
   );

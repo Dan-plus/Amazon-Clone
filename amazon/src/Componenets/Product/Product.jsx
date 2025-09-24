@@ -26,7 +26,11 @@ const Product = () => {
         {isLoading ? ( <Loader />) : (<section className={classes.products_container}>
           {products?.map((singleProduct) => {
             return (
-              <Productcard product={singleProduct} key={singleProduct.id} />
+              <Productcard
+                renderAdd={true}
+                product={singleProduct}
+                key={singleProduct.id}
+              />
             );
           })}
         </section>)
