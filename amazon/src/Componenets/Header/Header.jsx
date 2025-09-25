@@ -6,6 +6,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../Utility/firebase";
 
 const Header = () => {
   const [{ user, cart }, dispatch] = useContext(DataContext);
@@ -44,7 +45,7 @@ const Header = () => {
               <option value="">All</option>
             </select>
             <input type="text" placeholder="" />
-            <BsSearch size={25} />
+            <BsSearch size={38} />
           </div>
           {/* right side link */}
           <div className={classes.order_container}>
@@ -58,10 +59,22 @@ const Header = () => {
               </select>
             </Link>
 
-            {/* three components */}
-            <Link to="/Auth">
-              <p>Sign In</p>
-              <span>Account & Lists</span>
+            <Link to={!user && "/Auth"}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello {user?.email?.split("@")[0]} </p>
+                    <span onClick={() => (user ? auth.signOut() : null)}>
+                      Sign Out
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <p>Hello, Sign in</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
+              </div>
             </Link>
             {/* orders */}
             <Link to="/orders">
