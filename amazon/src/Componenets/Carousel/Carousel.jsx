@@ -6,7 +6,7 @@ import classes from "./carousel.module.css";
 
 const CarouselEffect = () => {
   return (
-    <div>
+    <div >
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
@@ -17,6 +17,7 @@ const CarouselEffect = () => {
           return <img key={imageItemLink} src={imageItemLink} />;
         })}
       </Carousel>
+      <div className={classes.hero__img}></div>
     </div>
   );
 };
